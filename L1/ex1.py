@@ -1,4 +1,4 @@
-def computeTransitionFunction(pattern, alphabet):
+def compute_transition_function(pattern, alphabet):
     m = len(pattern)
     delta = [[0 for x in range(len(alphabet))] for y in range(m + 1)]
     for q in range(m + 1):
@@ -11,10 +11,10 @@ def computeTransitionFunction(pattern, alphabet):
     return delta
 
 
-def finiteAutomationMatcher(text, pattern, alphabet):
+def finite_automation_matcher(text, pattern, alphabet):
     n = len(text)
     m = len(pattern)
-    delta = computeTransitionFunction(pattern, alphabet)
+    delta = compute_transition_function(pattern, alphabet)
     q = 0
     for i in range(n):
         q = delta[q][alphabet.index(text[i])]
@@ -27,4 +27,4 @@ def finiteAutomationMatcher(text, pattern, alphabet):
 if __name__ == '__main__':
     text = input("Text: ")
     pattern = input("Pattern: ")
-    finiteAutomationMatcher(text, pattern, alphabet="".join(set(text)))
+    finite_automation_matcher(text, pattern, alphabet="".join(set(text)))
