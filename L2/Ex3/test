@@ -1,0 +1,9 @@
+% hello.tex - Our first LaTeX example!
+\documentclass{article}
+\begin{document} %%%%% haha mark
+Hello World! \\% lol
+\end{document} \%%haha
+\\\\\% testt
+\\% bo tak
+\\\%\\ no
+\\%\\ oki
