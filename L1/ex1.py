@@ -21,10 +21,14 @@ def finite_automation_matcher(text, pattern, alphabet):
         if q == m:
             s = i + 1 - m
             print(
-                "Pattern occurs: " + text[:s] + '\x1b[6;34;m' + text[s:i + 1] + '\x1b[0m' + text[i + 1:])
+                "Pattern occurs: " + text[:s] + '\x1b[4;34;m' + text[s:i + 1] + '\x1b[0m' + text[i + 1:])
 
 
 if __name__ == '__main__':
     text = input("Text: ")
+    while not len(text) > 0:
+        text = input("Text: ")
     pattern = input("Pattern: ")
+    while not len(pattern) > 0:
+        pattern = input("Pattern: ")
     finite_automation_matcher(text, pattern, alphabet="".join(set(text)))
