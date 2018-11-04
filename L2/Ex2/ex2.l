@@ -11,8 +11,8 @@ LINE_BRAKE ("\\"+[ \t]*\n[^\n]*)*
 %%
 "\""("\\"|"\\\""|[^"\\\""])*"\"" printf("%s", yytext); // string
 
-^[ \t]*"///"[^\n]*("\\"+[ \t]*\n[^\n]*)*\n {if(docs){printf("%s", yytext);}} // "///" w pustej linii 
-"///"[^\n]*("\\"+[ \t]*\n[^\n]*)*\n {if(docs){printf("%s", yytext);}else{ printf("\n");}} // "///" po jakims tekscie 
+^[ \t]*"///"[^\n]*("\\"+[ \t]*\n[^\n]*)*\n {if(docs){printf("%s", yytext);}} // "///" w pustej linii
+"///"[^\n]*("\\"+[ \t]*\n[^\n]*)*\n {if(docs){printf("%s", yytext);}else{ printf("\n");}} // "///" po jakims tekscie
 
 ^[ \t]*"//"[^\n]*("\\"+[ \t]*\n[^\n]*)*\n ; // "//" w pustej
 "//"[^\n]*("\\"+[ \t]*\n[^\n]*)*\n printf("\n"); // "//" po tekscie
@@ -26,10 +26,9 @@ LINE_BRAKE ("\\"+[ \t]*\n[^\n]*)*
 
 int main(int argc, char** argv){
 	if(argc > 1){
-		if(strncmp(argv[0],"1",1)){
+		if(strncmp(argv[1],"1",1) == 0){
 			docs = 1;
 		}
 	}
 	yylex();
 }
-
